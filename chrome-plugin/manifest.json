@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Porovnavac cien",
+    "author": "Samuel S",
+    "version": "1.0.0",
+    "description": "Toto je porovnavac cien by Samuel Soltys",
+    "short_name": "Porovnavac",
+    "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "css": ["/style/content.css"],
+        "js": ["jquery.js","/script/content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+        "style/*",
+        "python/*"
+    ],
+    "browser_action": {
+      "default_title": "Porovnavac cien",
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png"
+      }
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="popup.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython_stdlib.js" integrity="sha256-Gnrw9tIjrsXcZSCh/wos5Jrpn0bNVNFJuNJI9d71TDs=" crossorigin="anonymous"></script>
+    </head>
+    <body onload="brython()">
+        <div class="outer_wrapper">
+            <div class="inner_wrapper">
+                <h3>Porovnavac cien</h3>
+                <p>Vyhladajte produkt:</p>
+                <input placeholder="Produkt" type="text" id="text">
+                <!-- <input type="submit" value="Vyhladat"> -->
+                <span id="output"></span>
+                    <script type="text/python" id="script1">
+                        from browser import document
+
+                        def show_text(e):
+                            document['output'].textContent = e.target.value;
+            
+                        document['text'].bind('input', show_text)
+                    </script>
+            </div>
+        </div>
+    </body>
+</html>
